@@ -17,7 +17,7 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(
         className=" py-20 md:py-32 px-4 bg-stone-200 text-center"
       >
         <div className=" max-w-[1500px] mx-auto flex flex-col items-center justify-center relative -mt-14">
-          <div className="w-full h-[80vh] relative ">
+          <div className="w-full h-[80vh] relative rounded-xl overflow-hidden">
             <img
               src="images/photo_5872867903672535142_y.jpg"
               className=" w-full h-full object-cover object-top"

@@ -85,15 +85,15 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
           {/* Price Card */}
           <motion.div
             variants={scaleIn}
-            className="bg-stone-100 p-8 text-center shadow-lg shadow-slate-600 "
+            className="bg-stone-100 p-8 rounded-2xl text-center shadow-lg shadow-slate-600 "
           >
-            <div className="w-full h-1/2 relative">
+            {/* <div className="w-full h-1/2 relative">
               <img
                 className="w-full h-full brightness-90 object-cover"
                 src="./toskana.jpg"
                 alt=""
               />
-            </div>
+            </div> */}
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -135,7 +135,7 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
           {/* Inclusions */}
           <motion.div
             variants={fadeInRight}
-            className="text-left bg-stone-100 "
+            className="text-left bg-stone-100 rounded-2xl "
           >
             <motion.h3
               variants={staggerItem}
@@ -150,7 +150,7 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
                   key={index}
                   variants={staggerItem}
                   whileHover={{ x: 10, transition: { duration: 0.2 } }}
-                  className="flex items-start gap-4 p-6 bg-stone-100  "
+                  className="flex items-start gap-4 p-6 bg-stone-100   "
                 >
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 5 }}
@@ -165,9 +165,9 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
 
             <motion.div
               variants={staggerItem}
-              className="bg-stone-300 p-4 mt-8"
+              className="bg-stone-300 p-4 mt-8 rounded-b-2xl"
             >
-              <p className="text-stone-800 font-medium text-center text-sm tracking-wider">
+              <p className="text-stone-800 font-medium  text-center text-sm tracking-wider">
                 *(В СТОИМОСТЬ НЕ ВКЛЮЧЕНЫ АВИАБИЛЕТЫ)*
               </p>
             </motion.div>

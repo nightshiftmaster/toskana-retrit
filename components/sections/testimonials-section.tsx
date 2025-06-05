@@ -50,6 +50,11 @@ const TestimonialsSection = forwardRef<HTMLElement>((props, ref) => {
 Как все таки практики и медитации меняют мышление , духовное состояние , дают возможность побыть с самим собой и услышать себя Ты проводник, который помог прочувствовать наше подсознание , освободится от ощущения тела и потерять счет времени , замедлится . Это сейчас так важно
 Спасибо что дала нам почувствовать это новое состояние`,
     },
+    // {
+    //   avatar: "./avatars/oksana.jpeg",
+    //   name: "Лейла Ошер",
+    //   text: `Подводя итоги моей поездки могу сказать,  девочки не упустите свой шанс,  смело отправляйтесь в это путешествие и не на секунду не пожалеете от этом`,
+    // },
   ];
 
   return (
@@ -81,7 +86,7 @@ const TestimonialsSection = forwardRef<HTMLElement>((props, ref) => {
                 scale: 1.02,
                 transition: { duration: 0.3 },
               }}
-              className="bg-stone-200 py-10 px-6 text-center"
+              className="bg-stone-200 py-10 px-6 text-center rounded-2xl shadow-md shadow-slate-400"
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}

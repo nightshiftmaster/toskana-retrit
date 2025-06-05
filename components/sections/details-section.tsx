@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { forwardRef } from "react"
-import { motion } from "framer-motion"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { staggerContainer, staggerItem, fadeInUp } from "@/lib/animations"
+import { forwardRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { staggerContainer, staggerItem, fadeInUp } from "@/lib/animations";
 
 const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
-  const { ref: animationRef, controls } = useScrollAnimation()
+  const { ref: animationRef, controls } = useScrollAnimation();
 
   const details = [
     {
@@ -51,7 +51,7 @@ const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
       content:
         "Каждое утро мы будем встречать с практиками йоги, направленными на пробуждение молодости тела и внутреннего сияния. Йога наполнит вас лёгкостью, грацией и ощущением «Я — дома». А практики танцевально-двигательной терапии помогут соединиться с телом как с источником силы, чувств, любви. Через движение — к себе, к памяти о том, какая вы на самом деле: чувственная, мягкая, свободная.",
     },
-  ]
+  ];
 
   return (
     <section ref={ref} className="py-20 md:py-32 px-4 bg-stone-100">
@@ -69,7 +69,10 @@ const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
           ДЕТАЛИ ПРОГРАММЫ
         </motion.h2>
 
-        <motion.div variants={staggerContainer} className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+        <motion.div
+          variants={staggerContainer}
+          className="grid md:grid-cols-1 lg:grid-cols-2 gap-8"
+        >
           {details.map((item, index) => (
             <motion.div
               key={index}
@@ -78,23 +81,30 @@ const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
                 y: -10,
                 transition: { duration: 0.3 },
               }}
-              className="bg-stone-200 p-6 cursor-pointer"
+              className="bg-stone-200 p-6 cursor-pointer rounded-2xl shadow-lg shadow-slate-400 transition-transform duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
-                <motion.span whileHover={{ scale: 1.2, rotate: 10 }} className="text-2xl">
+                <motion.span
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  className="text-2xl"
+                >
                   {item.icon}
                 </motion.span>
-                <h3 className="text-lg font-serif font-medium text-stone-800 tracking-wider">{item.title}</h3>
+                <h3 className="text-lg font-serif font-medium text-stone-800 tracking-wider">
+                  {item.title}
+                </h3>
               </div>
-              <p className="text-stone-700 leading-relaxed font-light">{item.content}</p>
+              <p className="text-stone-700 leading-relaxed font-light">
+                {item.content}
+              </p>
             </motion.div>
           ))}
         </motion.div>
       </motion.div>
     </section>
-  )
-})
+  );
+});
 
-DetailsSection.displayName = "DetailsSection"
+DetailsSection.displayName = "DetailsSection";
 
-export default DetailsSection
+export default DetailsSection;

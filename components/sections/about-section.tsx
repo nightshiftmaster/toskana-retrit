@@ -40,7 +40,7 @@ const AboutSection = forwardRef<HTMLElement>((ref, images) => {
           {/* Left Column - Text */}
           <motion.div
             variants={fadeInLeft}
-            className="bg-stone-100 shadow-lg shadow-slate-600 p-8 md:p-12"
+            className="bg-stone-100 rounded-2xl shadow-lg shadow-slate-600 p-8 md:p-12"
           >
             <motion.div
               variants={staggerContainer}
