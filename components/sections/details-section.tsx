@@ -90,7 +90,7 @@ const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
                 <h3 className="text-xl font-serif font-medium text-stone-800 tracking-wider">
                   {item.title}
                 </h3>
-                <p className="text-stone-700 text-sm leading-relaxed font-light">
+                <p className="text-stone-700 text-xs leading-relaxed font-light">
                   {item.content}
                 </p>
               </div>
