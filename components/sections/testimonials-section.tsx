@@ -10,6 +10,8 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       avatar: "./avatars/alena.png",
+      link: "https://www.instagram.com/alena_sher_emet/",
+      instagram: "Instagram: @alena_sher_emet",
       name: "Алёна Шеремет",
       text: `Юля,хочу сказать тебе спасибо ! Девичник в Риме -это прям магия ! Я так зарядилась и наполнилась ) столько хороших ,веселых ,добрых воспоминаний !
 Такие все девочки классные были)
@@ -23,10 +25,14 @@ const TestimonialsSection = () => {
     {
       avatar: "./avatars/tatiana-kotikovskaya.jpeg",
       name: "Татьяна Котиковская",
+      link: "https://www.instagram.com/_tata_sadhu_",
+      instagram: "Instagram: @_tata_sadhu_",
       text: `Юлечка , я благодарна тебе за потрясающий опыт проведения и участие в моем первом йога ретрите. Твоя Йога практика на рассвете была чудесной и наполняла меня энергией на весь день. комфортное проживание  и полезное питание , а главное- Душевная атмосфера сделали этот ретрит незабываемым. `,
     },
     {
+      link: "https://www.instagram.com/fichkovskay/?igsh=aXViejNlcWd4Zm42#",
       avatar: "./avatars/lada.jpeg",
+      instagram: "Instagram: @fichkovskay",
       name: "Лада Шедер",
       text: `Хочу поделиться своим глубоким впечатлением от ретрита, который проводила Юля и Тата в пустыне Мицпе-Рамон. Это были несколько дней, наполненных трансформацией, тишиной, силой и настоящим соприкосновением с собой.
 Было создано невероятное поле чуткое, поддерживающее, глубокое. Оно позволяло нам погружаться в практики, открываться, отпускать, исцеляться. Я почувствовала огромную отдачу от девочек, их нежность, эмпатию, безоценочное принятие и мудрое сопровождение. Они тонко чувствовали каждого, направляли с заботой и мягкостью, создавая пространство, где можно по-настоящему раскрыться.
@@ -37,12 +43,16 @@ const TestimonialsSection = () => {
     },
     {
       avatar: "./avatars/liza.jpeg",
+      link: "https://www.instagram.com/lizachkinazi/",
+      instagram: "Instagram: @lizachkinazi",
       name: "Елизавета Ашкинази",
       text: `Юля, круто было поехать и не парить себе голову с жильем, с питанием, с атракциями, гидом, подвозками.
 У меня получилось просто кайфовать от Рима, от компании, быть в моменте! Спасибо что пригласила в свою мечту! Жду твоих новых идей и предложений!`,
     },
     {
       avatar: "./avatars/oksana.jpeg",
+      link: "https://www.instagram.com/oksi__1502/",
+      instagram: "Instagram: @oksi__1502",
       name: "Оксана Новицкая",
       text: `Юля , благодарю за возможность пройти в невероятное путешествие вглубь себя
 Как все таки практики и медитации меняют мышление , духовное состояние , дают возможность побыть с самим собой и услышать себя Ты проводник, который помог прочувствовать наше подсознание , освободится от ощущения тела и потерять счет времени , замедлится . Это сейчас так важно
@@ -91,6 +101,10 @@ const TestimonialsSection = () => {
                   className="h-full w-full object-cover rounded-full"
                 />
               </motion.div>
+              <p className="font-serif font-medium text-stone-800 tracking-wider">
+                {testimonial.name}
+              </p>
+
               <motion.div
                 variants={staggerContainer}
                 className="flex justify-center mb-4"
@@ -98,9 +112,14 @@ const TestimonialsSection = () => {
               <p className="text-stone-700 mb-4 italic font-light">
                 "{testimonial.text}"
               </p>
-              <p className="font-serif font-medium text-stone-800 tracking-wider">
-                — {testimonial.name}
-              </p>
+              <a
+                href={testimonial.link}
+                className="cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {testimonial.instagram}
+              </a>
             </motion.div>
           ))}
         </motion.div>
