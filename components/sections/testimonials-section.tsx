@@ -1,12 +1,10 @@
 "use client";
 
-import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { staggerContainer, staggerItem, fadeInUp } from "@/lib/animations";
 
-const TestimonialsSection = forwardRef<HTMLElement>((props, ref) => {
+const TestimonialsSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
 
   const testimonials = [
@@ -50,15 +48,10 @@ const TestimonialsSection = forwardRef<HTMLElement>((props, ref) => {
 Как все таки практики и медитации меняют мышление , духовное состояние , дают возможность побыть с самим собой и услышать себя Ты проводник, который помог прочувствовать наше подсознание , освободится от ощущения тела и потерять счет времени , замедлится . Это сейчас так важно
 Спасибо что дала нам почувствовать это новое состояние`,
     },
-    // {
-    //   avatar: "./avatars/oksana.jpeg",
-    //   name: "Лейла Ошер",
-    //   text: `Подводя итоги моей поездки могу сказать,  девочки не упустите свой шанс,  смело отправляйтесь в это путешествие и не на секунду не пожалеете от этом`,
-    // },
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 px-4 bg-stone-100">
+    <section className="py-20 md:py-32 px-4 bg-stone-100" id="reviews">
       <motion.div
         ref={animationRef}
         initial="hidden"
@@ -101,17 +94,7 @@ const TestimonialsSection = forwardRef<HTMLElement>((props, ref) => {
               <motion.div
                 variants={staggerContainer}
                 className="flex justify-center mb-4"
-              >
-                {/* {[...Array(5)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    variants={staggerItem}
-                    whileHover={{ scale: 1.2, y: -2 }}
-                  >
-                    <Star className="w-4 h-4 text-stone-600 fill-current" />
-                  </motion.div>
-                ))} */}
-              </motion.div>
+              ></motion.div>
               <p className="text-stone-700 mb-4 italic font-light">
                 "{testimonial.text}"
               </p>
@@ -124,7 +107,7 @@ const TestimonialsSection = forwardRef<HTMLElement>((props, ref) => {
       </motion.div>
     </section>
   );
-});
+};
 
 TestimonialsSection.displayName = "TestimonialsSection";
 

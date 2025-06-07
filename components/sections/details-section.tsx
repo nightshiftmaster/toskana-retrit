@@ -1,11 +1,10 @@
 "use client";
 
-import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { staggerContainer, staggerItem, fadeInUp } from "@/lib/animations";
 
-const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
+const DetailsSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
 
   const details = [
@@ -54,7 +53,7 @@ const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 px-4 bg-stone-200 ">
+    <section className="py-20 md:py-32 px-4 bg-stone-200 " id="details">
       <motion.div
         ref={animationRef}
         initial="hidden"
@@ -77,7 +76,7 @@ const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
             <motion.div
               key={index}
               variants={staggerItem}
-              className="bg-stone-100 gap-3 p-6 py-6  flex cursor-pointer rounded-2xl shadow-lg shadow-slate-400 transition-transform duration-300"
+              className="bg-stone-100 gap-5 p-6 py-6  flex cursor-pointer rounded-2xl shadow-lg shadow-slate-400 transition-transform duration-300"
             >
               <div className="flex items-center relative w-[90%] h-full rounded-lg overflow-hidden">
                 <img
@@ -100,7 +99,7 @@ const DetailsSection = forwardRef<HTMLElement>((props, ref) => {
       </motion.div>
     </section>
   );
-});
+};
 
 DetailsSection.displayName = "DetailsSection";
 

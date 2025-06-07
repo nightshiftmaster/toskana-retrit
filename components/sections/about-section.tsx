@@ -1,18 +1,13 @@
 "use client";
 
-import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import {
-  staggerContainer,
-  staggerItem,
-  fadeInLeft,
-  fadeInRight,
-} from "@/lib/animations";
-import Gallery from "@/components/sections/gallery";
 
-const AboutSection = forwardRef<HTMLElement>((ref, images) => {
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { staggerContainer, staggerItem, fadeInLeft } from "@/lib/animations";
+import Gallery from "@/components/sections/gallery";
+import { Link } from "react-scroll";
+
+const AboutSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
 
   const paragraphs = [
@@ -25,7 +20,7 @@ const AboutSection = forwardRef<HTMLElement>((ref, images) => {
   ];
 
   return (
-    <section className="py-20 md:py-32 px-4 bg-stone-200 mt-20">
+    <section className="py-20 md:py-32 px-4 bg-stone-200 mt-20" id="about">
       <motion.div
         ref={animationRef}
         initial="hidden"
@@ -40,11 +35,11 @@ const AboutSection = forwardRef<HTMLElement>((ref, images) => {
           {/* Left Column - Text */}
           <motion.div
             variants={fadeInLeft}
-            className="bg-stone-100 rounded-2xl shadow-lg shadow-slate-600 p-8 md:p-12"
+            className="bg-stone-100 flex flex-col justify-center items-center rounded-2xl shadow-lg shadow-slate-600 p-8 md:p-12"
           >
             <motion.div
               variants={staggerContainer}
-              className="text-stone-700 leading-relaxed space-y-6 font-light"
+              className="text-stone-700 leading-relaxed space-y-6 font-light mb-10"
             >
               {paragraphs.map((text, index) => (
                 <motion.p key={index} variants={staggerItem}>
@@ -61,136 +56,24 @@ const AboutSection = forwardRef<HTMLElement>((ref, images) => {
                 ты в самой красивой главе своей жизни.
               </motion.p>
             </motion.div>
+            <Link
+              to="programm"
+              smooth={true}
+              spy={true}
+              duration={500}
+              offset={-130}
+              className="bg-stone-600 text-center  w-[80%] cursor-pointer rounded-2xl hover:bg-stone-700 text-white px-7 py-2 text-sm font-medium tracking-wider uppercase font-sans"
+            >
+              ПРОГРАММА И СТОИМОСТЬ
+            </Link>
           </motion.div>
 
-          {/* Right Column - Image */}
-          {/* <motion.div
-            variants={fadeInRight}
-            className="flex flex-col justify-center gap-2 bg-green-300 w-full h-full"
-          >
-            <div className="flex flex-row gap-2">
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row gap-2">
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row gap-2">
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row gap-2">
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <div className="w-1/2">
-                <Image
-                  src="images/photo_5872867903672535137_y.jpg"
-                  alt="Retreat leader in Tuscany"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-            </div>
-          </motion.div> */}
           <Gallery />
         </div>
       </motion.div>
     </section>
   );
-});
+};
 
 AboutSection.displayName = "AboutSection";
 

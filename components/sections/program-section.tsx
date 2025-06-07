@@ -20,8 +20,9 @@ import {
   fadeInRight,
   scaleIn,
 } from "@/lib/animations";
+import { Link } from "react-scroll";
 
-const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
+const ProgramSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
 
   const inclusions = [
@@ -66,7 +67,7 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 px-4 bg-stone-200">
+    <section className="py-20 md:py-32 px-4 bg-stone-200" id="programm">
       <motion.div
         ref={animationRef}
         initial="hidden"
@@ -122,7 +123,7 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
 
             <motion.div
               variants={staggerContainer}
-              className="mt-8 space-y-2 text-sm text-stone-600 font-light"
+              className="mt-8  mb-7 space-y-2 text-sm text-stone-600 font-light"
             >
               {prices.map((price, index) => (
                 <motion.div key={index} variants={staggerItem} className="py-2">
@@ -130,12 +131,22 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
                 </motion.div>
               ))}
             </motion.div>
+            <Link
+              to="booking"
+              smooth={true}
+              spy={true}
+              duration={500}
+              offset={-70}
+              className="bg-stone-600 mt-20 cursor-pointer rounded-2xl hover:bg-stone-700 text-white px-7 py-2 text-sm font-medium tracking-wider uppercase font-sans"
+            >
+              ЗАБРОНИРОВАТЬ
+            </Link>
           </motion.div>
 
           {/* Inclusions */}
           <motion.div
             variants={fadeInRight}
-            className="text-left bg-stone-100 rounded-2xl "
+            className="flex flex-col justify-center items-center bg-stone-100 rounded-2xl  "
           >
             <motion.h3
               variants={staggerItem}
@@ -150,7 +161,7 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
                   key={index}
                   variants={staggerItem}
                   whileHover={{ x: 10, transition: { duration: 0.2 } }}
-                  className="flex items-start gap-4 p-6 bg-stone-100   "
+                  className="flex text-left items-start gap-4 p-6 bg-stone-100   "
                 >
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 5 }}
@@ -162,13 +173,23 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
                 </motion.div>
               ))}
             </motion.div>
+            <Link
+              to="details"
+              smooth={true}
+              spy={true}
+              duration={500}
+              offset={-130}
+              className="bg-stone-600 mt-10 w-[80%] cursor-pointer rounded-2xl hover:bg-stone-700 text-white px-7 py-2 text-sm font-medium tracking-wider uppercase font-sans"
+            >
+              ПОДРОБНЕЕ О ПРОГРАММЕ
+            </Link>
 
             <motion.div
               variants={staggerItem}
-              className="bg-stone-300 p-4 mt-8 rounded-b-2xl"
+              className="bg-stone-300 p-4 mt-8 rounded-b-2xl w-full"
             >
-              <p className="text-stone-800 font-medium  text-center text-sm tracking-wider">
-                *(В СТОИМОСТЬ НЕ ВКЛЮЧЕНЫ АВИАБИЛЕТЫ)*
+              <p className="text-stone-800 font-bold p-3  text-center text-lg tracking-wider">
+                В СТОИМОСТЬ НЕ ВКЛЮЧЕНЫ АВИАБИЛЕТЫ
               </p>
             </motion.div>
           </motion.div>
@@ -176,7 +197,7 @@ const ProgramSection = forwardRef<HTMLElement>((props, ref) => {
       </motion.div>
     </section>
   );
-});
+};
 
 ProgramSection.displayName = "ProgramSection";
 

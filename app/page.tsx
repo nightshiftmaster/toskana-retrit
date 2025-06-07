@@ -34,18 +34,18 @@ const dancing = Dancing_Script({
   variable: "--font-dancing",
 });
 
+export const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+  ref.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 export default function TuscanyRetreat() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Refs for smooth scrolling
-  const heroRef = useRef<HTMLElement>(null);
-  const aboutRef = useRef<HTMLElement>(null);
-  const programRef = useRef<HTMLElement>(null);
-  const scheduleRef = useRef<HTMLElement>(null);
-  const detailsRef = useRef<HTMLElement>(null);
-  const reviewsRef = useRef<HTMLElement>(null);
-  const bookingRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -54,23 +54,6 @@ export default function TuscanyRetreat() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    ref.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
-
-  const navigationRefs = {
-    heroRef,
-    aboutRef,
-    programRef,
-    scheduleRef,
-    detailsRef,
-    reviewsRef,
-    bookingRef,
-  };
 
   if (isLoading) {
     return (
@@ -85,19 +68,17 @@ export default function TuscanyRetreat() {
       className={`min-h-screen bg-stone-100 overflow-x-hidden ${inter.variable} ${cormorant.variable} ${dancing.variable} font-sans`}
     >
       <Navigation
-        refs={navigationRefs}
-        scrollToSection={scrollToSection}
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
-      <HeroSection scrollToSection={scrollToSection} bookingRef={bookingRef} />
-      <AboutSection ref={aboutRef} />
-      <ProgramSection ref={programRef} />
-      <ScheduleSection ref={scheduleRef} />
-      <DetailsSection ref={detailsRef} />
-      <TestimonialsSection ref={reviewsRef} />
-      <BookingSection ref={bookingRef} />
+      <HeroSection />
+      <AboutSection />
+      <ProgramSection />
+      <ScheduleSection />
+      <DetailsSection />
+      <TestimonialsSection />
+      <BookingSection />
     </div>
   );
 }

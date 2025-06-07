@@ -5,45 +5,24 @@ import type React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import { Link } from "react-scroll";
 
 interface NavigationProps {
-  refs: {
-    heroRef: React.RefObject<HTMLElement>;
-    aboutRef: React.RefObject<HTMLElement>;
-    programRef: React.RefObject<HTMLElement>;
-    scheduleRef: React.RefObject<HTMLElement>;
-    detailsRef: React.RefObject<HTMLElement>;
-    reviewsRef: React.RefObject<HTMLElement>;
-    bookingRef: React.RefObject<HTMLElement>;
-  };
-  scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: (open: boolean) => void;
 }
 
 export default function Navigation({
-  refs,
-  scrollToSection,
   isMobileMenuOpen,
   setIsMobileMenuOpen,
 }: NavigationProps) {
-  const {
-    heroRef,
-    aboutRef,
-    programRef,
-    scheduleRef,
-    detailsRef,
-    reviewsRef,
-    bookingRef,
-  } = refs;
-
   const navigationItems = [
-    { label: "ГЛАВНАЯ", ref: heroRef },
-    { label: "О РЕТРИТЕ", ref: aboutRef },
-    { label: "ПРОГРАММА", ref: programRef },
-    { label: "РАСПИСАНИЕ", ref: scheduleRef },
-    { label: "ДЕТАЛИ", ref: detailsRef },
-    { label: "ОТЗЫВЫ", ref: reviewsRef },
+    { label: "ГЛАВНАЯ", to: "hero" },
+    { label: "О РЕТРИТЕ", to: "about" },
+    { label: "ПРОГРАММА", to: "programm" },
+    { label: "РАСПИСАНИЕ", to: "schedule" },
+    { label: "ДЕТАЛИ", to: "details" },
+    { label: "ОТЗЫВЫ", to: "reviews" },
   ];
 
   return (
@@ -78,17 +57,17 @@ export default function Navigation({
             className="hidden md:flex items-center space-x-8"
           >
             {navigationItems.map((item, index) => (
-              <motion.button
-                key={item.label}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
-                whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                onClick={() => scrollToSection(item.ref)}
-                className="text-stone-600 hover:text-stone-800 transition-colors duration-200 text-sm font-medium tracking-wider uppercase font-sans"
+              <Link
+                key={index}
+                to={item.to}
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={0}
+                className="text-stone-600 whitespace-nowrap cursor-pointer hover:text-stone-800 transition-colors duration-200 text-sm font-medium tracking-wider uppercase font-sans"
               >
                 {item.label}
-              </motion.button>
+              </Link>
             ))}
 
             <motion.div
@@ -98,12 +77,16 @@ export default function Navigation({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
-                onClick={() => scrollToSection(bookingRef)}
-                className="bg-stone-600 hover:bg-stone-700 text-white px-6 py-2 text-sm font-medium tracking-wider uppercase font-sans"
+              <Link
+                to="booking"
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={-70}
+                className="bg-stone-600 cursor-pointer rounded-2xl hover:bg-stone-700 text-white px-7 py-2 text-sm font-medium tracking-wider uppercase font-sans"
               >
                 ЗАБРОНИРОВАТЬ
-              </Button>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -158,29 +141,35 @@ export default function Navigation({
             className="px-2 pt-2 pb-6 space-y-1 bg-stone-100 border-t border-stone-200"
           >
             {navigationItems.map((item) => (
-              <motion.button
+              <Link
                 key={item.label}
-                variants={staggerItem}
-                whileHover={{ x: 10, transition: { duration: 0.2 } }}
+                to={item.to}
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={0}
                 onClick={() => {
-                  scrollToSection(item.ref);
                   setIsMobileMenuOpen(false);
                 }}
-                className="block w-full text-left px-4 py-3 text-stone-600 hover:text-stone-800 hover:bg-stone-50 transition-colors duration-200 text-sm font-medium tracking-wider uppercase font-sans"
+                className="block w-full cursor-pointer text-left px-4 py-3 text-stone-600 hover:text-stone-800 hover:bg-stone-50 transition-colors duration-200 text-sm font-medium tracking-wider uppercase font-sans"
               >
                 {item.label}
-              </motion.button>
+              </Link>
             ))}
             <motion.div variants={staggerItem} className="pt-4 px-4">
-              <Button
+              <Link
+                to="booking"
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={-70}
                 onClick={() => {
-                  scrollToSection(bookingRef);
                   setIsMobileMenuOpen(false);
                 }}
                 className="w-full bg-stone-600 hover:bg-stone-700 text-white px-6 py-3 text-sm font-medium tracking-wider uppercase font-sans"
               >
                 ЗАБРОНИРОВАТЬ
-              </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </motion.div>

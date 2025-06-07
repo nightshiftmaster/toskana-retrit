@@ -1,6 +1,5 @@
 "use client";
 
-import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import {
@@ -10,7 +9,7 @@ import {
   scaleIn,
 } from "@/lib/animations";
 
-const ScheduleSection = forwardRef<HTMLElement>((props, ref) => {
+const ScheduleSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
 
   const scheduleItems = [
@@ -21,7 +20,7 @@ const ScheduleSection = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 px-4 bg-stone-100 ">
+    <section className="py-20 md:py-32 px-4 bg-stone-100 " id="schedule">
       <motion.div
         ref={animationRef}
         initial="hidden"
@@ -83,7 +82,7 @@ const ScheduleSection = forwardRef<HTMLElement>((props, ref) => {
       </motion.div>
     </section>
   );
-});
+};
 
 ScheduleSection.displayName = "ScheduleSection";
 
