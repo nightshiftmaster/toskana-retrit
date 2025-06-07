@@ -82,7 +82,7 @@ export default function TuscanyRetreat() {
 
   return (
     <div
-      className={`min-h-screen bg-stone-100 ${inter.variable} ${cormorant.variable} ${dancing.variable} font-sans`}
+      className={`min-h-screen bg-stone-100 overflow-x-hidden ${inter.variable} ${cormorant.variable} ${dancing.variable} font-sans`}
     >
       <Navigation
         refs={navigationRefs}
