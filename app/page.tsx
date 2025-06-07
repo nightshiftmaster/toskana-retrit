@@ -34,18 +34,9 @@ const dancing = Dancing_Script({
   variable: "--font-dancing",
 });
 
-export const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-  ref.current?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-};
-
 export default function TuscanyRetreat() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Refs for smooth scrolling
 
   useEffect(() => {
     const timer = setTimeout(() => {
