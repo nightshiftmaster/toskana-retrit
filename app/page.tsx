@@ -14,6 +14,7 @@ import ScheduleSection from "@/components/sections/schedule-section";
 import DetailsSection from "@/components/sections/details-section";
 import TestimonialsSection from "@/components/sections/testimonials-section";
 import BookingSection from "@/components/sections/booking-section";
+import Footer from "@/components/sections/footer";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
@@ -70,6 +71,9 @@ export default function TuscanyRetreat() {
       <DetailsSection />
       <TestimonialsSection />
       <BookingSection />
+      <Footer />
+
+      {/* Mobile Menu */}
     </div>
   );
 }
