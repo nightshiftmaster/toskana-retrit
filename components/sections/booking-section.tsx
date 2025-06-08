@@ -45,7 +45,7 @@ const BookingSection = () => {
               className="flex items-center justify-center gap-3"
             >
               <Calendar className="w-6 h-6" />
-              <span className="text-lg tracking-wider font-light">
+              <span className="md:text-lg tracking-wider font-light">
                 ДАТЫ: 10–17 АВГУСТА
               </span>
             </motion.div>
@@ -54,19 +54,18 @@ const BookingSection = () => {
               className="flex items-center justify-center gap-3"
             >
               <MapPin className="w-6 h-6" />
-              <span className="text-lg tracking-wider font-light">
+              <span className="md:text-lg tracking-wider font-light">
                 МЕСТО ВЫЛЕТА: МИЛАН
               </span>
             </motion.div>
           </motion.div>
-
           <motion.div variants={staggerItem} className="space-y-4">
             <motion.div
               whileHover={{ x: 10 }}
               className="flex items-center justify-center gap-3"
             >
               <Heart className="w-6 h-6" />
-              <span className="text-lg tracking-wider font-light">
+              <span className="md:text-lg tracking-wider font-light">
                 СТОИМОСТЬ: ОТ 2600$
               </span>
             </motion.div>
@@ -75,7 +74,7 @@ const BookingSection = () => {
               className="flex items-center justify-center gap-3"
             >
               <CheckCircle className="w-6 h-6" />
-              <span className="text-lg tracking-wider uppercase font-light">
+              <span className="md:text-lg tracking-wider uppercase font-light">
                 Не включает авиаперелет
               </span>
             </motion.div>

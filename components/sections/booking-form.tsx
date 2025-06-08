@@ -35,17 +35,17 @@ const BookingForm = () => {
           from_number: "",
           from_email: "",
           from_instagram: "",
-          from_inspiration: "",
           from_experience_radio: "",
           from_experience: "",
           from_restrictions_radio: "",
           from_restrictions: "",
           from_nutrition_radio: "",
           from_nutrition: "",
-          message: "",
+          from_inspiration: "",
         }}
         validationSchema={SignupSchema}
         onSubmit={(values, { resetForm }) => {
+          console.log("Form values:", values);
           // emailjs
           //   .sendForm(
           //     import.meta.env.VITE_SERVICE_ID,
@@ -72,9 +72,14 @@ const BookingForm = () => {
       >
         {({ values, errors, touched, setFieldValue, isSubmitting }) => {
           return (
-            <Form className="flex flex-col gap-9 text-gray-700 my-5" ref={form}>
+            <Form
+              className="flex flex-col gap-5 md:gap-9 text-gray-700 my-5"
+              ref={form}
+            >
               {/* name */}
-              <label className="text-xl font-semibold">Имя и Фамилия *</label>
+              <label className="md:text-xl  font-semibold">
+                Имя и Фамилия *
+              </label>
               <Field
                 name="from_name"
                 type="text"
@@ -92,13 +97,18 @@ const BookingForm = () => {
               ) : null}
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* birth */}
-              <label className="text-xl font-semibold">Дата Рождения *</label>
+              <label className="md:text-xl font-semibold">
+                Дата Рождения *
+              </label>
               <DatePicker
                 selected={
                   values.from_birth ? new Date(values.from_birth) : null
                 }
                 onChange={(val) => setFieldValue("from_birth", val)}
                 name="from_birth"
+                showYearDropdown
+                scrollableYearDropdown
+                yearDropdownItemNumber={100}
                 dateFormat="dd.MM.yyyy"
                 className={`h-12 w-full rounded-lg bg-lightbrown px-2  ${
                   errors.from_birth && touched.from_birth
@@ -114,7 +124,7 @@ const BookingForm = () => {
               ) : null}
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* city */}
-              <label className="text-xl font-semibold">
+              <label className="md:text-xl font-semibold">
                 Город проживания *
               </label>
               <Field
@@ -134,7 +144,9 @@ const BookingForm = () => {
               ) : null}
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* number */}
-              <label className="text-xl font-semibold">Номер телефона *</label>
+              <label className="md:text-xl font-semibold">
+                Номер телефона *
+              </label>
               <Field
                 name="from_number"
                 type="text"
@@ -152,7 +164,7 @@ const BookingForm = () => {
               ) : null}
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* email */}
-              <label className="text-xl font-semibold">
+              <label className="md:text-xl font-semibold">
                 Электронная почта *
               </label>
               <Field
@@ -172,7 +184,7 @@ const BookingForm = () => {
               ) : null}
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* instagram */}
-              <label className="text-xl font-semibold">
+              <label className="md:text-xl font-semibold">
                 Профиль инстаграм (не обязателно)
               </label>
               <Field
@@ -188,7 +200,7 @@ const BookingForm = () => {
               {/* inspiration */}
               {/* experience */}
               <div className="flex flex-col gap-8">
-                <label className="text-xl font-semibold">
+                <label className="md:text-xl font-semibold">
                   Есть ли у тебя опыт практики йоги/медитации?
                 </label>
 
@@ -221,7 +233,8 @@ const BookingForm = () => {
                       Какой именно опыт? Как давно?
                     </label>
                     <Field
-                      name="from_eperience"
+                      name="from_experience"
+                      value={values.from_experience}
                       as="textarea"
                       type="text"
                       rows="4"
@@ -234,7 +247,7 @@ const BookingForm = () => {
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* restrictions */}
               <div className="flex flex-col gap-8">
-                <label className="text-xl font-semibold">
+                <label className="md:text-xl font-semibold">
                   Есть ли у тебя ограничения по здоровью, хронические
                   заболевания, травмы, аллергии, которые нам важно учесть?
                 </label>
@@ -273,6 +286,7 @@ const BookingForm = () => {
                       as="textarea"
                       rows="4"
                       cols="20"
+                      value={values.from_restrictions}
                       className="rounded-lg bg-lightbrown p-2 "
                     />
                   </div>
@@ -281,7 +295,7 @@ const BookingForm = () => {
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* nutrition */}
               <div className="flex flex-col gap-8">
-                <label className="text-xl font-semibold">
+                <label className="md:text-xl font-semibold">
                   Следуешь ли ты определённому типу питания (вегетарианство,
                   безглютеновая диета, непереносимость лактозы и пр.)?
                 </label>
@@ -313,6 +327,7 @@ const BookingForm = () => {
                     </label>
                     <Field
                       name="from_nutrition"
+                      value={values.from_nutrition}
                       as="textarea"
                       type="text"
                       rows="4"
@@ -324,12 +339,13 @@ const BookingForm = () => {
               </div>
               <hr className="border-t-1 border-gray-400 my-3" />
               <div className="flex flex-col gap-8">
-                <label className="text-xl font-semibold">
+                <label className="md:text-xl font-semibold">
                   Что вдохновило тебя принять участие в девичнике?
                 </label>
                 <Field
                   name="from_inspiration"
                   as="textarea"
+                  value={values.from_inspiration}
                   type="text"
                   rows="9"
                   cols="50"
