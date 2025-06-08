@@ -8,15 +8,17 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const SignupSchema = Yup.object().shape({
-  from_name: Yup.string().required("Name is a required field"),
+  from_name: Yup.string().required("Имя и Фамилия - обязательное поле"),
   from_email: Yup.string()
-    .email("Enter valid email ")
-    .required("Email is a required field")
+    .email("Введите корректный email !")
+    .required("Электронная почта - обязательное поле")
     .matches(
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      "Enter valid email !"
+      "Введите корректный email !"
     ),
-  message: Yup.string().required("Message is a required field"),
+  from_birth: Yup.string().required("Дата Рождения - обязательное поле"),
+  from_city: Yup.string().required("Город проживания - обязательное поле"),
+  from_number: Yup.number().required("Номер телефона - обязательное поле"),
 });
 
 const BookingForm = () => {
@@ -88,6 +90,7 @@ const BookingForm = () => {
                   <IoMdAlert size={20} />
                 </div>
               ) : null}
+              <hr className="border-t-1 border-gray-400 my-3" />
               {/* birth */}
               <label className="text-xl font-semibold">Дата Рождения *</label>
               <DatePicker
@@ -109,6 +112,7 @@ const BookingForm = () => {
                   <IoMdAlert size={20} />
                 </div>
               ) : null}
+              <hr className="border-t-1 border-gray-400 my-3" />
               {/* city */}
               <label className="text-xl font-semibold">
                 Город проживания *
@@ -128,6 +132,7 @@ const BookingForm = () => {
                   <IoMdAlert size={20} />
                 </div>
               ) : null}
+              <hr className="border-t-1 border-gray-400 my-3" />
               {/* number */}
               <label className="text-xl font-semibold">Номер телефона *</label>
               <Field
@@ -145,6 +150,7 @@ const BookingForm = () => {
                   <IoMdAlert size={20} />
                 </div>
               ) : null}
+              <hr className="border-t-1 border-gray-400 my-3" />
               {/* email */}
               <label className="text-xl font-semibold">
                 Электронная почта *
@@ -164,6 +170,7 @@ const BookingForm = () => {
                   <IoMdAlert size={20} />
                 </div>
               ) : null}
+              <hr className="border-t-1 border-gray-400 my-3" />
               {/* instagram */}
               <label className="text-xl font-semibold">
                 Профиль инстаграм (не обязателно)
@@ -177,6 +184,7 @@ const BookingForm = () => {
                     : "outline-blue-500"
                 }`}
               />
+              <hr className="border-t-1 border-gray-400 my-3" />
               {/* inspiration */}
               {/* experience */}
               <div className="flex flex-col gap-8">
@@ -328,25 +336,7 @@ const BookingForm = () => {
                   className="rounded-lg bg-lightbrown p-2 "
                 />
               </div>
-              {/* <Field
-                name="message"
-                as="textarea"
-                type="text"
-                placeholder="Message"
-                rows="9"
-                cols="50"
-                className={`rounded-lg bg-lightbrown p-2 ${
-                  errors.message && touched.message
-                    ? "outline-red-500 outline"
-                    : "outline-blue-500"
-                }`}
-              />
-              {errors.message && touched.message ? (
-                <div className="text-red-500 flex flex-row gap-1 items-stretch">
-                  {errors.message}
-                  <IoMdAlert size={20} />
-                </div>
-              ) : null} */}
+
               <div className="bg-stone-400 py-3">
                 <p>* - обязательные поля</p>
               </div>

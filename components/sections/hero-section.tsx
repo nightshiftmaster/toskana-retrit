@@ -24,12 +24,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-2xl md:text-3xl lg:text-5xl font-serif font-light mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
+            className="text-3xl md:text-3xl lg:text-6xl font-serif font-light mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
           >
             ДЕВИЧНИК В ТОСКАНЕ
           </motion.h1>
 
-          <h2 className="text-md md:text-2xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+          <h2 className="text-lg md:text-2xl lg:text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
             КРАСОТА ТЕЛА И ДУШИ
           </h2>
 
