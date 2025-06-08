@@ -78,7 +78,7 @@ const TestimonialsSection = () => {
 
         <motion.div
           variants={staggerContainer}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-8 "
         >
           {testimonials.map((testimonial, index) => (
             <motion.div

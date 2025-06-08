@@ -70,7 +70,7 @@ const DetailsSection = () => {
 
         <motion.div
           variants={staggerContainer}
-          className="grid md:grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 "
         >
           {details.map((item, index) => (
             <motion.div

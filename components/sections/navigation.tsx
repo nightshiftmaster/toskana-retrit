@@ -20,7 +20,6 @@ export default function Navigation({
     { label: "ГЛАВНАЯ", to: "hero" },
     { label: "О РЕТРИТЕ", to: "about" },
     { label: "ПРОГРАММА", to: "programm" },
-    { label: "РАСПИСАНИЕ", to: "schedule" },
     { label: "ДЕТАЛИ", to: "details" },
     { label: "ОТЗЫВЫ", to: "reviews" },
   ];
