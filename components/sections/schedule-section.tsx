@@ -8,6 +8,7 @@ import {
   fadeInUp,
   scaleIn,
 } from "@/lib/animations";
+import { Link } from "react-scroll";
 
 const ScheduleSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
@@ -20,7 +21,10 @@ const ScheduleSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 px-4 bg-stone-100 " id="schedule">
+    <section
+      className="py-16 px-4 shadow-lg bg-stone-100 shadow-slate-600 rounded-2xl  "
+      id="schedule"
+    >
       <motion.div
         ref={animationRef}
         initial="hidden"
@@ -30,14 +34,14 @@ const ScheduleSection = () => {
       >
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl md:text-4xl font-serif font-light text-stone-800 mb-16 tracking-wider"
+          className="text-2xl md:text-3xl font-serif font-light text-stone-800  tracking-wider"
         >
           КАК ВСЁ БУДЕТ?
         </motion.h2>
 
         <motion.div
           variants={scaleIn}
-          className="bg-stone-200 p-8 md:p-12 text-left rounded-2xl"
+          className=" p-8 md:p-12 text-left rounded-2xl"
         >
           <motion.div
             variants={staggerContainer}
@@ -62,24 +66,18 @@ const ScheduleSection = () => {
               ЗАБРОНИРОВАТЬ МЕСТО ВОЗМОЖНО ТОЛЬКО ПРИ ПРЕДОПЛАТЕ 50%!
             </p>
           </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            className="mt-8 text-stone-700 leading-relaxed space-y-4 font-light"
-          >
-            <motion.p variants={staggerItem}>
-              <strong>В стоимость входит:</strong> проживание, трансфер,
-              завтраки, экскурсия на Сыроварню, практики Йоги, медитации и
-              Танцевально-двигательной терапии, арт-класс от Итальянского
-              художника, поездка во Флоренцию с посещением Галереи УФФИЦИ,
-              профессиональная фотосессия.
-            </motion.p>
-            <motion.p variants={staggerItem}>
-              <strong>В стоимость НЕ входит:</strong> авиабилеты.
-            </motion.p>
-          </motion.div>
         </motion.div>
       </motion.div>
+      <Link
+        to="booking"
+        smooth={true}
+        spy={true}
+        duration={500}
+        offset={-70}
+        className="bg-stone-600 mt-20 cursor-pointer rounded-2xl hover:bg-stone-700 text-white px-7 py-2 text-sm font-medium tracking-wider uppercase font-sans"
+      >
+        ЗАБРОНИРОВАТЬ
+      </Link>
     </section>
   );
 };

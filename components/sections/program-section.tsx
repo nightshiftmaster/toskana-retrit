@@ -21,6 +21,7 @@ import {
   scaleIn,
 } from "@/lib/animations";
 import { Link } from "react-scroll";
+import ScheduleSection from "./schedule-section";
 
 const ProgramSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
@@ -84,73 +85,80 @@ const ProgramSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Price Card */}
-          <motion.div
-            variants={scaleIn}
-            className="bg-stone-100 p-8 rounded-2xl text-center shadow-lg shadow-slate-600 "
-          >
-            {/* <div className="w-full h-1/2 relative">
+          <div className="flex flex-col gap-5  ">
+            <motion.div
+              variants={scaleIn}
+              className="bg-stone-100 p-8 rounded-2xl text-center shadow-lg shadow-slate-600 "
+            >
+              {/* <div className="w-full h-1/2 relative">
               <img
                 className="w-full h-full brightness-90 object-cover"
                 src="./toskana.jpg"
                 alt=""
               />
             </div> */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.8,
-                type: "spring",
-                bounce: 0.4,
-              }}
-              className="text-6xl mt-8 md:text-7xl font-serif font-light text-stone-800 mb-4"
-            >
-              2600$
-            </motion.div>
-            <motion.div
-              variants={staggerItem}
-              className="text-xl md:text-2xl text-stone-600 mb-2 tracking-wider font-light"
-            >
-              10–17 АВГУСТА
-            </motion.div>
-            <motion.div
-              variants={staggerItem}
-              className="text-2xl md:text-3xl font-serif font-light text-stone-800 tracking-wider"
-            >
-              ТОСКАНА
-            </motion.div>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.8,
+                  type: "spring",
+                  bounce: 0.4,
+                }}
+                className="text-6xl mt-8 md:text-7xl font-serif font-light text-stone-800 mb-4"
+              >
+                2600$
+              </motion.div>
+              <motion.div
+                variants={staggerItem}
+                className="text-xl md:text-2xl text-stone-600 mb-2 tracking-wider font-light"
+              >
+                10–17 АВГУСТА
+              </motion.div>
+              <motion.div
+                variants={staggerItem}
+                className="text-2xl md:text-3xl font-serif font-light text-stone-800 tracking-wider"
+              >
+                ТОСКАНА
+              </motion.div>
 
-            <motion.div
-              variants={staggerContainer}
-              className="mt-8  mb-7 space-y-2 text-sm text-stone-600 font-light"
-            >
-              {prices.map((price, index) => (
-                <motion.div key={index} variants={staggerItem} className="py-2">
-                  {price}
-                </motion.div>
-              ))}
+              <motion.div
+                variants={staggerContainer}
+                className="mt-8  mb-7 space-y-2 text-sm text-stone-600 font-light"
+              >
+                {prices.map((price, index) => (
+                  <motion.div
+                    key={index}
+                    variants={staggerItem}
+                    className="py-2"
+                  >
+                    {price}
+                  </motion.div>
+                ))}
+              </motion.div>
+              <Link
+                to="details"
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={-130}
+                className="bg-stone-600 mt-10 w-[80%] cursor-pointer rounded-2xl hover:bg-stone-700 text-white px-7 py-2 text-sm font-medium tracking-wider uppercase font-sans"
+              >
+                ПОДРОБНЕЕ О ПРОГРАММЕ
+              </Link>
             </motion.div>
-            <Link
-              to="booking"
-              smooth={true}
-              spy={true}
-              duration={500}
-              offset={-70}
-              className="bg-stone-600 mt-20 cursor-pointer rounded-2xl hover:bg-stone-700 text-white px-7 py-2 text-sm font-medium tracking-wider uppercase font-sans"
-            >
-              ЗАБРОНИРОВАТЬ
-            </Link>
-          </motion.div>
+            <ScheduleSection />
+          </div>
 
           {/* Inclusions */}
           <motion.div
             variants={fadeInRight}
-            className="flex flex-col justify-center items-center bg-stone-100 rounded-2xl  "
+            className="flex flex-col justify-center items-center bg-stone-100 rounded-2xl shadow-lg  shadow-slate-600 py-16  "
           >
             <motion.h3
               variants={staggerItem}
-              className="text-2xl font-serif font-light text-stone-800 mb-8 tracking-wider p-6 text-center"
+              className="text-3xl font-serif font-light text-stone-800 mb-8 tracking-wider p-6 text-center"
             >
               В СТОИМОСТЬ ВКЛЮЧЕНО:
             </motion.h3>
@@ -173,6 +181,15 @@ const ProgramSection = () => {
                 </motion.div>
               ))}
             </motion.div>
+            <motion.div
+              variants={staggerItem}
+              className="mt-8 p-6 bg-stone-300"
+            >
+              <p className="text-stone-800 font-medium text-center tracking-wider">
+                В СТОИМОСТЬ НЕ ВКЛЮЧЕНЫ АВИАБИЛЕТЫ
+              </p>
+            </motion.div>
+
             <Link
               to="details"
               smooth={true}
@@ -184,14 +201,14 @@ const ProgramSection = () => {
               ПОДРОБНЕЕ О ПРОГРАММЕ
             </Link>
 
-            <motion.div
+            {/* <motion.div
               variants={staggerItem}
               className="bg-stone-300 p-4 mt-8 rounded-b-2xl w-full"
             >
               <p className="text-stone-800 font-bold p-3  text-center text-lg tracking-wider">
                 В СТОИМОСТЬ НЕ ВКЛЮЧЕНЫ АВИАБИЛЕТЫ
               </p>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </motion.div>

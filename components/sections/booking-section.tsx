@@ -12,8 +12,8 @@ import {
   Mail,
   Instagram,
 } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { staggerContainer, staggerItem, fadeInUp } from "@/lib/animations";
+import BookingForm from "./booking-form";
 
 const BookingSection = () => {
   const contactInfo = [
@@ -25,7 +25,7 @@ const BookingSection = () => {
   return (
     <section
       id="booking"
-      className="py-20 md:py-32 px-4 bg-stone-600 text-white"
+      className="py-20 md:py-32 px-4 bg-stone-300 text-gray-700 shadow-lg shadow-slate-600 rounded-2xl"
     >
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
@@ -75,14 +75,15 @@ const BookingSection = () => {
               className="flex items-center justify-center gap-3"
             >
               <CheckCircle className="w-6 h-6" />
-              <span className="text-lg tracking-wider font-light">
-                ЧТО ВКЛЮЧЕНО: ВСЁ КРОМЕ АВИАБИЛЕТОВ
+              <span className="text-lg tracking-wider uppercase font-light">
+                Не включает авиаперелет
               </span>
             </motion.div>
           </motion.div>
         </motion.div>
+        <BookingForm />
 
-        <motion.div variants={staggerContainer} className="space-y-6">
+        {/* <motion.div variants={staggerContainer} className="space-y-6">
           <motion.div
             variants={staggerItem}
             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
@@ -131,7 +132,7 @@ const BookingSection = () => {
               </motion.div>
             ))}
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
