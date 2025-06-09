@@ -40,7 +40,7 @@ const AboutSection = () => {
     <section
       className="py-20 md:py-32 px-4 "
       id="about"
-      style={{ backgroundColor: "#f2f1ed" }}
+      style={{ backgroundColor: "#faf0e6" }}
     >
       <motion.div
         ref={animationRef}

@@ -8,13 +8,13 @@ const HeroSection = () => {
     <section
       id="hero"
       className="py-16 md:py-30 px-4   text-center"
-      style={{ backgroundColor: "#f2f1ed" }}
+      style={{ backgroundColor: "#faf0e6" }}
     >
       <div className="max-w-[1500px] mx-auto flex flex-col  items-center justify-center relative -mt-14">
         <div className="w-full h-[90vh] relative rounded-xl overflow-hidden">
           <img
             src="/bg2.jpg"
-            className="w-full h-[123vh] object-cover "
+            className="w-full h-[135vh] object-cover "
             alt="Фон"
           />
           <div className="absolute inset-0 bg-black/30" />
