@@ -7,8 +7,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="py-16 md:py-30 px-4   text-center"
-      style={{ backgroundColor: "#faf0e6" }}
+      className="py-16 md:py-30 px-4 bg-stone-200   text-center"
     >
       <div className="max-w-[1500px] mx-auto flex flex-col  items-center justify-center relative -mt-14">
         <div className="w-full h-[90vh] relative rounded-xl overflow-hidden">
@@ -25,12 +24,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-3xl md:text-3xl lg:text-6xl font-serif font-light mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
+            className="text-3xl font-caveat md:text-3xl lg:text-6xl font-light mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
           >
             ДЕВИЧНИК В ТОСКАНЕ
           </motion.h1>
 
-          <h2 className="text-lg md:text-2xl lg:text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+          <h2 className="text-lg font-playfair md:text-2xl lg:text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
             КРАСОТА ТЕЛА И ДУШИ
           </h2>
 
@@ -38,16 +37,19 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="text-sm md:text-lg leading-relaxed font-light mt-6 px-4 md:px-14 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+            className="text-lg  font-cormorant md:text-3xl leading-relaxed font-light mt-6 px-4 md:px-14 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
           >
             Йога, эстетика, танец, искусство, фотосессия и итальянская любовь к
             жизни — в уникальном путешествии для женщин, которые хотят больше,
             чем просто отпуск.
           </motion.p>
 
-          <div className="mt-8">
-            <h1 className="text-xl md:text-5xl font-bold drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+          <div className="mt-8 flex flex-col justify-center items-center gap-10">
+            <h1 className="text-xl font-montserrat md:text-5xl font-bold drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
               10 - 17 Августа
+            </h1>
+            <h1 className="text-xl  font-montserrat  md:text-5xl font-bold drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+              1 - 10 Октября
             </h1>
           </div>
 

@@ -29,7 +29,7 @@ export default function Gallery() {
           className="w-full shadow-2xl shadow-gray-500 h-full relative rounded-2xl overflow-hidden sh"
         >
           <Image
-            src="/bg.jpg"
+            src="/programm/yoga.jpg"
             alt="image"
             fill // соотношение 300x192 примерно как 16:10
             className="w-full h-full object-cover   relative cursor-pointer hover:border-solid hover:border-4 hover:scale-150 hover:z-20 transition-transform duration-300 "

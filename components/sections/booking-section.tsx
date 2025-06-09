@@ -46,7 +46,7 @@ const BookingSection = () => {
             >
               <Calendar className="w-6 h-6" />
               <span className="md:text-lg tracking-wider font-light">
-                ДАТЫ: 10–17 АВГУСТА
+                ДАТЫ: 10–17 АВГУСТА, 1–7 ОКТЯБРЯ
               </span>
             </motion.div>
             <motion.div
@@ -55,7 +55,7 @@ const BookingSection = () => {
             >
               <MapPin className="w-6 h-6" />
               <span className="md:text-lg tracking-wider font-light">
-                МЕСТО ВЫЛЕТА: МИЛАН
+                МЕСТО ВСТРЕЧИ: МИЛАН МАЛЬПЕНСА
               </span>
             </motion.div>
           </motion.div>

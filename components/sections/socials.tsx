@@ -19,6 +19,19 @@ const Socials = () => {
           <img src="./facebook.webp" alt="" />
         </a>
       </div>
+      <div className="h-9 w-9 rounded-full overflow-hidden filter grayscale">
+        <a
+          href="https://wa.me/16137699591"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="./whatsup.webp"
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        </a>
+      </div>
     </div>
   );
 };

@@ -74,6 +74,7 @@ const TestimonialsSection = () => {
 Апартаменты были очень хорошие — светлые, просторные и уютные.
 Во время путешествия мы посетили Музей Ватикана с замечательным и очень увлекательным гидом. Мы были впечатлены и вдохновлены одновременно!
 Подводя итоги поездки, могу сказать одно: девочки, не упустите свой шанс! Смело отправляйтесь в это путешествие — и не пожалеете ни на секунду.`,
+      place: "Девичник в Риме",
     },
   ];
 
@@ -129,6 +130,9 @@ const TestimonialsSection = () => {
               <p className="text-stone-700 mb-4 italic font-light">
                 "{testimonial.text}"
               </p>
+              <p className="text-stone-500 text-sm my-10">
+                "{testimonial.place}"
+              </p>
               <a
                 href={testimonial.link}
                 className="cursor-pointer"
@@ -152,7 +156,6 @@ const TestimonialsSection = () => {
                 </div>
                 {testimonial.instagram}
               </a>
-              <p className="text-stone-500 text-sm mt-2">{testimonial.place}</p>
             </motion.div>
           ))}
         </motion.div>

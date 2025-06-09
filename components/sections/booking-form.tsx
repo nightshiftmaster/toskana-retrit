@@ -7,6 +7,18 @@ import { IoMdAlert } from "react-icons/io";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+// Add this type declaration to extend ImportMeta with env
+interface ImportMetaEnv {
+  readonly SERVICE_ID: string;
+  readonly TEMPLATE_ID: string;
+  readonly PUBLIC_KEY: string;
+  // add other env variables here if needed
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+
 const SignupSchema = Yup.object().shape({
   from_name: Yup.string().required("Имя и Фамилия - обязательное поле"),
   from_email: Yup.string()
@@ -45,29 +57,36 @@ const BookingForm = () => {
         }}
         validationSchema={SignupSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log("Form values:", values);
-          // emailjs
-          //   .sendForm(
-          //     import.meta.env.VITE_SERVICE_ID,
-          //     import.meta.env.VITE_TEMPLATE_ID,
-          //     form.current,
-          //     {
-          //       publicKey: import.meta.env.VITE_PUBLIC_KEY,
-          //     }
-          //   )
-          //   .then(
-          //     () => {
-          //       console.log("SUCCESS!");
-          //       setSuccess(true);
-          //       resetForm();
-          //     },
-          //     (error) => {
-          //       if (values.from_name.length === 0) {
-          //         console.log("error");
-          //       }
-          //       console.log("FAILED...", error.text);
-          //     }
-          //   );
+          if (form.current) {
+            console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
+            console.log(process.env.NEXT_PUBLIC_TEMPLATE_ID);
+            console.log(process.env.NEXT_PUBLIC_TEMPLATE_ID);
+
+            return emailjs
+              .sendForm(
+                process.env.NEXT_PUBLIC_SERVICE_ID as string,
+                process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+                form.current,
+                {
+                  publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY as string,
+                }
+              )
+              .then(
+                () => {
+                  console.log("SUCCESS!");
+                  setSuccess(true);
+                  resetForm();
+                },
+                (error) => {
+                  if (values.from_name.length === 0) {
+                    console.log("error");
+                  }
+                  console.log("FAILED...", error.text);
+                }
+              );
+          } else {
+            console.error("Form reference is null.");
+          }
         }}
       >
         {({ values, errors, touched, setFieldValue, isSubmitting }) => {
@@ -366,19 +385,11 @@ const BookingForm = () => {
               >
                 {!isSubmitting ? "Отправить заявку" : "Sending..."}
               </button>
-              <MoonLoader
-                className="absolute -top-10 left-8 transform -translate-x-1/2 -translate-y-1/2"
-                loading={isSubmitting}
-                color="white"
-                size={25}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
             </Form>
           );
         }}
       </Formik>
-      <h2 className="text-xl text-white font-light text-center">
+      <h2 className="text-xl text-blue-600 font-light text-center">
         {success ? "Your message has been sent successfully!" : ""}
       </h2>
     </div>

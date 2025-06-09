@@ -33,11 +33,13 @@ export default function Navigation({
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="flex items-center"
+          <Link
+            key="hero"
+            to="hero"
+            smooth={true}
+            spy={true}
+            duration={500}
+            className="flex items-center cursor-pointer"
           >
             <span className="text-xl text-stone-800 font-medium tracking-wide font-serif">
               ТОСКАНА{" "}
@@ -45,7 +47,7 @@ export default function Navigation({
                 Ретрит
               </span>
             </span>
-          </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <motion.div
@@ -146,7 +148,7 @@ export default function Navigation({
                 smooth={true}
                 spy={true}
                 duration={500}
-                offset={0}
+                offset={-30}
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                 }}

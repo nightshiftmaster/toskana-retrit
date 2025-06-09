@@ -44,8 +44,6 @@ export default function Gallery() {
       .then((data) => setImages(Array.isArray(data) ? data : []));
   }, []);
 
-  console.log(images);
-
   return (
     <section
       id="gallery"
