@@ -24,12 +24,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-3xl font-caveat md:text-3xl lg:text-6xl font-light mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
+            className="text-5xl font-caveat md:text-3xl lg:text-6xl font-light mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
           >
             ДЕВИЧНИК В ТОСКАНЕ
           </motion.h1>
 
-          <h2 className="text-lg font-playfair md:text-2xl lg:text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+          <h2 className="text-xl font-playfair md:text-2xl lg:text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
             КРАСОТА ТЕЛА И ДУШИ
           </h2>
 
@@ -59,7 +59,7 @@ const HeroSection = () => {
             spy={true}
             duration={500}
             offset={100}
-            className="md:w-1/4 w-fit cursor-pointer mt-14 bg-green-100 rounded-2xl hover:bg-fuchsia-100 text-amber-950 px-7 py-2 text-sm font-medium tracking-wider uppercase transition-transform hover:scale-105"
+            className="md:w-1/4 w-fit mb-16 md:mb-0 cursor-pointer mt-14 bg-green-100 rounded-2xl hover:bg-fuchsia-100 text-amber-950 px-7 py-2 text-sm font-medium tracking-wider uppercase transition-transform hover:scale-105"
           >
             Узнать больше
           </Link>
