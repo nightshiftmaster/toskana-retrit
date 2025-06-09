@@ -1,11 +1,10 @@
 "use client";
 
 import type React from "react";
-
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 import { Link } from "react-scroll";
+import Socials from "./socials";
 
 interface NavigationProps {
   isMobileMenuOpen: boolean;
@@ -87,26 +86,7 @@ export default function Navigation({
                 ЗАБРОНИРОВАТЬ
               </Link>
             </motion.div>
-            <div className="flex items-center gap-2 justify-center">
-              <div className="h-9 w-9 rounded-full overflow-hidden filter grayscale">
-                <a
-                  href="https://www.instagram.com/yg_level/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="./insta.jpg" alt="" />
-                </a>
-              </div>
-              <div className="h-14 w-14 rounded-full overflow-hidden filter grayscale">
-                <a
-                  href="https://www.facebook.com/YuliaHolovina"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="./facebook.webp" alt="" />
-                </a>
-              </div>
-            </div>
+            <Socials />
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -175,26 +155,8 @@ export default function Navigation({
                 {item.label}
               </Link>
             ))}
-            <div className="flex items-center gap-2 justify-start px-4">
-              <div className="h-9 w-9 rounded-full overflow-hidden filter grayscale">
-                <a
-                  href="https://www.instagram.com/yg_level/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="./insta.jpg" alt="" />
-                </a>
-              </div>
-              <div className="h-14 w-14 rounded-full overflow-hidden filter grayscale">
-                <a
-                  href="https://www.facebook.com/YuliaHolovina"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="./facebook.webp" alt="" />
-                </a>
-              </div>
-            </div>
+
+            <Socials />
             <motion.div variants={staggerItem} className="pt-4 px-4">
               <Link
                 to="booking"

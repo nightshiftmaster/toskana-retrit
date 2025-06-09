@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Socials from "./socials";
 
 export default function Footer() {
   return (
@@ -51,6 +52,7 @@ export default function Footer() {
               Email: YYglevel@gmail.com
             </p>
           </motion.div>
+          <Socials />
 
           <motion.div
             className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-16"
