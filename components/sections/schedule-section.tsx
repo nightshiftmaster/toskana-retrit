@@ -96,7 +96,7 @@ const ScheduleSection = () => {
       >
         <motion.h2
           variants={fadeInUp}
-          className="text-2xl md:text-4xl font-serif font-light text-stone-800 tracking-wider"
+          className="text-3xl md:text-4xl font-serif font-light text-stone-800 tracking-wider"
         >
           В Программе нашего путешествия ✨
         </motion.h2>
@@ -107,7 +107,7 @@ const ScheduleSection = () => {
         >
           <motion.div
             variants={staggerContainer}
-            className="text-stone-700 leading-relaxed space-y-12 font-light whitespace-pre-line"
+            className="text-stone-700 text-center md:text-left leading-relaxed space-y-12 font-light whitespace-pre-line"
           >
             {scheduleItems.map((item, index) => (
               <motion.div key={index} variants={staggerItem}>

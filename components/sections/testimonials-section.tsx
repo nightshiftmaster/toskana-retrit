@@ -139,21 +139,24 @@ const TestimonialsSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="w-8 h-8 mx-auto mb-2 rounded-full overflow-hidden">
-                  {testimonial.name !== "Лейла Ошер" ? (
+                {testimonial.name !== "Лейла Ошер" ? (
+                  <div className="w-8 h-8 mx-auto mb-2 rounded-full overflow-hidden">
                     <img
                       src="./insta.jpg"
                       alt="insta-icon"
                       className="w-full h-full object-contain"
                     />
-                  ) : (
+                  </div>
+                ) : (
+                  <div className="w-14 h-14 mx-auto mb-2 rounded-full overflow-hidden">
                     <img
                       src="./facebook.webp"
                       alt="insta-icon"
                       className="w-full h-full object-contain"
                     />
-                  )}
-                </div>
+                  </div>
+                )}
+
                 {testimonial.instagram}
               </a>
             </motion.div>

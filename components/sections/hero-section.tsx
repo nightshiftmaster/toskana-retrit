@@ -19,7 +19,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="absolute md:top-12 mt-20 text-white   flex flex-col items-center justify-center md:gap-[4vh] w-full p-4">
+        <div className="absolute md:top-12 mt-20 text-white   flex flex-col items-center justify-center md:gap-[4vh]  w-full p-4">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="text-lg  font-cormorant md:text-3xl leading-relaxed font-light mt-6 px-4 md:px-14 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+            className="text-xl  font-cormorant md:text-3xl leading-relaxed font-light mt-6 px-4 md:px-14 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
           >
             Йога, эстетика, танец, искусство, фотосессия и итальянская любовь к
             жизни — в уникальном путешествии для женщин, которые хотят больше,
