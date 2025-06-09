@@ -7,16 +7,17 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="py-20 md:py-32 px-4 bg-stone-200  text-center"
+      className="py-16 md:py-30 px-4   text-center"
+      style={{ backgroundColor: "#f2f1ed" }}
     >
       <div className="max-w-[1500px] mx-auto flex flex-col  items-center justify-center relative -mt-14">
-        <div className="w-full h-[80vh] relative rounded-xl overflow-hidden">
+        <div className="w-full h-[90vh] relative rounded-xl overflow-hidden">
           <img
-            src="images/photo_5872867903672535142_y.jpg"
-            className="w-full h-full object-cover object-top"
+            src="/bg2.jpg"
+            className="w-full h-[123vh] object-cover "
             alt="Фон"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
         <div className="absolute md:top-12 mt-20 text-white   flex flex-col items-center justify-center md:gap-[4vh] w-full p-4">

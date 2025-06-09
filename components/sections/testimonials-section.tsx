@@ -151,6 +151,7 @@ const TestimonialsSection = () => {
                 </div>
                 {testimonial.instagram}
               </a>
+              <p className="text-stone-500 text-sm mt-2">{testimonial.place}</p>
             </motion.div>
           ))}
         </motion.div>

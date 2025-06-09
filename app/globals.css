@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: #f5f5f5 !important; /* мягкий светлый */
+}
+
+.swiper-pagination-bullet {
+  background-color: #ddd !important; /* светло-серый */
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important; /* белая активная точка */
+  opacity: 1;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
