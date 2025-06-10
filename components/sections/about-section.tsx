@@ -38,7 +38,7 @@ const AboutSection = () => {
           >
             <motion.div
               variants={staggerContainer}
-              className="text-stone-700 leading-relaxed text-center md:text-left space-y-4 font-light mb-10"
+              className="text-stone-700 leading-relaxed text-left space-y-4 font-light mb-10"
             >
               <motion.p
                 variants={staggerItem}

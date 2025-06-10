@@ -20,22 +20,22 @@ const HeroSection = () => {
         </div>
 
         <div className="absolute md:top-12 mt-4 text-white   flex flex-col items-center justify-center md:gap-[4vh] gap-[1vh] w-full py-5">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl  md:text-6xl lg:text-8xl font-light
-           mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
+            className="text-4xl  md:text-6xl lg:text-8xl font-serif font-light
+           mb-6  drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
           >
             Девичник в Италии
-          </motion.h1>
+          </motion.h2>
 
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-xl  md:text-2xl lg:text-6xl font-light
-           mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
+            className="text-xl  md:text-2xl lg:text-6xl font-serif font-light
+           mb-6  drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
           >
             📍Тоскана
           </motion.h1>
