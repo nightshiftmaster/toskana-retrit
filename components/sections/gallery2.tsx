@@ -80,13 +80,10 @@ export default function Gallery() {
               grabCursor={true}
               centeredSlides={true}
               slidesPerView="auto"
-              //   coverflowEffect={{
-              //     rotate: 50,
-              //     stretch: 0,
-              //     depth: 100,
-              //     modifier: 1,
-              //     slideShadows: true,
-              //   }}
+              onBeforeInit={(swiper) => {
+                (swiper.params as any).preloadImages = true;
+                (swiper.params as any).watchSlidesProgress = true;
+              }}
               navigation
               pagination={{ clickable: true }}
               autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -105,6 +102,7 @@ export default function Gallery() {
                     <Image
                       src={image}
                       alt="image"
+                      loading="eager"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />

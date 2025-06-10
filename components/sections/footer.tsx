@@ -35,9 +35,9 @@ export default function Footer() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="flex items-center"
+                className="flex items-center justify-center md:justify-start"
               >
-                <span className="text-xl text-stone-300 font-medium tracking-wide font-serif">
+                <span className="text-xl text-center text-stone-300 font-medium tracking-wide font-serif">
                   ТОСКАНА Ретрит
                 </span>
               </motion.div>

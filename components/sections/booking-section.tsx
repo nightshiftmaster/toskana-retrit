@@ -54,12 +54,15 @@ const BookingSection = () => {
               className="flex items-center justify-center gap-3"
             >
               <MapPin className="w-6 h-6" />
-              <span className="md:text-lg tracking-wider font-light">
+              <span className="md:text-lg whitespace-nowrap tracking-wider font-light">
                 МЕСТО ВСТРЕЧИ: МИЛАН МАЛЬПЕНСА
               </span>
             </motion.div>
           </motion.div>
-          <motion.div variants={staggerItem} className="space-y-4">
+          <motion.div
+            variants={staggerItem}
+            className="space-y-4 -mt-3 md:mt-0 "
+          >
             <motion.div
               whileHover={{ x: 10 }}
               className="flex items-center justify-center gap-3"
