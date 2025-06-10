@@ -16,9 +16,9 @@ export default function Navigation({
   setIsMobileMenuOpen,
 }: NavigationProps) {
   const navigationItems = [
-    { label: "ГЛАВНАЯ", to: "hero" },
     { label: "О РЕТРИТЕ", to: "about" },
     { label: "ПРОГРАММА", to: "programm" },
+    { label: "ГАЛЛЕРЕЯ", to: "gallery" },
     { label: "ДЕТАЛИ", to: "details" },
     { label: "ОТЗЫВЫ", to: "reviews" },
   ];

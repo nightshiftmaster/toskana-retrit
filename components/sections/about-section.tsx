@@ -10,7 +10,7 @@ const AboutSection = () => {
   const { ref: animationRef, controls } = useScrollAnimation();
 
   const paragraphs = [
-    `Приветствую тебя, дорогая.\nМеня зовут Юлия Головин — сертифицированный инструктор Йоги и Пилатес направлений, организатор Здоровых путешествий, ретритов и девичников.`,
+    `\nМеня зовут Юлия Головин — сертифицированный инструктор Йоги и Пилатес направлений, организатор Здоровых путешествий, ретритов и девичников.`,
     `«В каждом движении — любовь. В каждом вдохе — свобода».`,
     `Создаю пространства, где женщина может отдохнуть душой и телом,\nвернуться к себе, наполниться энергией, красотой и лёгкостью.`,
     `Мои путешествия — это больше, чем просто поездки.\nЭто мягкое прикосновение к себе через практики йоги, танцевальную терапию, живое движение и глубокое расслабление.\nЭто встречи с природой, с собой, с другими женщинами — в любви, принятии и радости.`,
@@ -38,8 +38,14 @@ const AboutSection = () => {
           >
             <motion.div
               variants={staggerContainer}
-              className="text-stone-700 leading-relaxed text-center md:text-left space-y-6 font-light mb-10"
+              className="text-stone-700 leading-relaxed text-center md:text-left space-y-4 font-light mb-10"
             >
+              <motion.p
+                variants={staggerItem}
+                className="text-center text-xl font-medium text-stone-800 pt-4"
+              >
+                Приветствую тебя, дорогая !
+              </motion.p>
               {paragraphs.map((text, index) => (
                 <motion.p key={index} variants={staggerItem}>
                   {text.split("\n").map((line, i) => (
