@@ -30,7 +30,6 @@ const SignupSchema = Yup.object().shape({
     ),
   from_birth: Yup.string().required("Дата Рождения - обязательное поле"),
   from_city: Yup.string().required("Город проживания - обязательное поле"),
-  from_number: Yup.number().required("Номер телефона - обязательное поле"),
 });
 
 const BookingForm = () => {
@@ -163,25 +162,7 @@ const BookingForm = () => {
               ) : null}
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* number */}
-              <label className="md:text-xl font-semibold">
-                Номер телефона *
-              </label>
-              <Field
-                name="from_number"
-                type="text"
-                className={`h-12 rounded-lg bg-lightbrown px-2 ${
-                  errors.from_number && touched.from_number
-                    ? "outline-red-500 outline"
-                    : "outline-blue-500"
-                }`}
-              />
-              {errors.from_number && touched.from_number ? (
-                <div className="text-red-500 flex flex-row gap-1 items-stretch">
-                  {errors.from_number}
-                  <IoMdAlert size={20} />
-                </div>
-              ) : null}
-              <hr className="border-t-1 border-gray-400 my-3" />
+
               {/* email */}
               <label className="md:text-xl font-semibold">
                 Электронная почта *
@@ -201,6 +182,14 @@ const BookingForm = () => {
                   <IoMdAlert size={20} />
                 </div>
               ) : null}
+              <hr className="border-t-1 border-gray-400 my-3" />
+              <label className="md:text-xl font-semibold">Номер телефона</label>
+              <Field
+                name="from_number"
+                type="text"
+                className={`h-12 rounded-lg bg-lightbrown px-2 `}
+              />
+
               <hr className="border-t-1 border-gray-400 my-3" />
               {/* instagram */}
               <label className="md:text-xl font-semibold">
