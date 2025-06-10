@@ -9,7 +9,7 @@ const HeroSection = () => {
       id="hero"
       className="py-16 md:py-30 px-4 bg-stone-200   text-center"
     >
-      <div className="max-w-[1500px] mx-auto flex flex-col  items-center justify-center relative -mt-14">
+      <div className="max-w-[1500px] mx-auto flex flex-col   items-center justify-center relative -mt-14">
         <div className="w-full h-[90vh] relative rounded-xl overflow-hidden">
           <img
             src="/bg2.jpg"
@@ -19,14 +19,25 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="absolute md:top-12 mt-20 text-white   flex flex-col items-center justify-center md:gap-[4vh]  w-full p-4">
+        <div className="absolute md:top-12 mt-4 text-white   flex flex-col items-center justify-center md:gap-[4vh] gap-[1vh] w-full py-5">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-5xl font-caveat md:text-3xl lg:text-6xl font-light mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
+            className="text-4xl  md:text-6xl lg:text-8xl font-light
+           mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
           >
-            ДЕВИЧНИК В ТОСКАНЕ
+            Девичник в Италии
+          </motion.h1>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-xl  md:text-2xl lg:text-6xl font-light
+           mb-6 tracking-wide drop-shadow-[0_0_12px_rgba(255,255,255,0.65)]"
+          >
+            📍Тоскана
           </motion.h1>
 
           <h2 className="text-xl font-playfair md:text-2xl lg:text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
@@ -44,7 +55,7 @@ const HeroSection = () => {
             чем просто отпуск.
           </motion.p>
 
-          <div className="mt-8 flex flex-col justify-center items-center gap-10">
+          <div className="mt-8 flex flex-col justify-center items-center gap-3 md:gap-10">
             <h1 className="text-xl font-montserrat md:text-5xl font-bold drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
               10 - 17 Августа
             </h1>
@@ -59,7 +70,7 @@ const HeroSection = () => {
             spy={true}
             duration={500}
             offset={100}
-            className="md:w-1/4 w-fit mb-16 md:mb-0 cursor-pointer mt-14 bg-green-100 rounded-2xl hover:bg-fuchsia-100 text-amber-950 px-7 py-2 text-sm font-medium tracking-wider uppercase transition-transform hover:scale-105"
+            className="md:w-1/4 w-fit  cursor-pointer mt-5 md:mt-14 bg-green-100 rounded-2xl hover:bg-fuchsia-100 text-amber-950 px-7 py-2 text-sm font-medium tracking-wider uppercase transition-transform hover:scale-105"
           >
             Узнать больше
           </Link>
