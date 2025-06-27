@@ -91,17 +91,21 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p className="text-sm opacity-60 tracking-widest font-light md:mt-10">
-            Created by{" "}
-            <a
-              href="https://vlad-web-developer.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vlad Medvedev
-            </a>
-            all rights reserved © 2025
-          </p>
+          <div className="flex flex-col items-center gap-5 mt-10">
+            <p>
+              Created by{" "}
+              <a
+                href="https://vlad-web-developer.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Vlad Medvedev
+              </a>
+            </p>
+            <p className="text-sm opacity-60 tracking-widest font-light ">
+              {""} All rights reserved © 2025
+            </p>
+          </div>
         </motion.div>
       </div>
     </footer>
